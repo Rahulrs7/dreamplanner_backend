@@ -29,7 +29,7 @@ app.use(cors({
   methods: "GET,POST,PUT,DELETE",
   allowedHeaders: ["Content-Type", "Authorization", "token"]
 }));
-
+app.options("*", cors());
 
 
 // db connection
