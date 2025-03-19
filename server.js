@@ -13,23 +13,7 @@ const port = process.env.PORT || 5000;
 
 
 // middlewares
-const allowedOrigins = [
-  "https://dreamplanner-frontend.vercel.app",
-  "https://dreamplanner-admin.vercel.app"
-];
-
-app.use(cors({
-  origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
-          callback(null, true);
-      } else {
-          callback(new Error("Not allowed by CORS"));
-      }
-  },
-  methods: "GET,POST,PUT,DELETE",
-  allowedHeaders: ["Content-Type", "Authorization", "token"]
-}));
-app.options("*", cors());
+app.use(cors);
 
 
 // db connection
